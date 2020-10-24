@@ -1,6 +1,6 @@
 #this file is a test for the cluster python file
 from Cleaning.cluster import creating_clusters
-Values = creating_clusters('2007-2011.xlsx')
+Values = creating_clusters('2007-2016.xlsx')
 
 #creating the tests
 def test_creating_clusters():
