@@ -8,9 +8,15 @@ DOWNLOADING THE FILES:
 
 
 To download the data, please go to https://www.icpsr.umich.edu/web/NACJD/series/128
+
+*You'll have to make an account for this website*
+
 You can click on any year's file from 2007 to 2016 (but for an easier process I would suggest 2014, 2015, or 2016). Please download the "Extract Files" version. I.e National Incident-Based Reporting System, 2015: Extract Files. Once you click on the link, you will be taken to a page for download.
 I recommend instead of hitting the first download tab, click on the "Data & Documentation tab". Then look for "DS1 Incident-Level File" and click the download arrow associated with that row. This just makes sure you download the bare minimum need since the file is already large. You want your download to be in Stata format. Once it's downloaded, unzip the folder. From here you only need two things from this extracted folder. 
 The first is the Codebook (named “xxxxx-Codebook”) and the second is the actual .dta file (named “xxxxx-0001-Data.dta”) which is located in the “DS0001” folder. Create a folder called “Data” in your working directory, take both of these files and put them in that folder. 
+
+Make sure this Data folder is in no other folder but the Capstone_Code_Final folder. And change the name of the “xxxxx-0001-Data.dta” file in the Data folder to whatever year you downloaded (i.e from “37066-0001-Data.dta” to "2016.dta")
+
 From there, the preliminary files have been set up!
  
 RUNNING CleaningData.py:
