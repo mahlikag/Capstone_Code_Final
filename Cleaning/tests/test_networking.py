@@ -2,7 +2,7 @@
 
 #setting the needed information
 import pandas as pd
-filename  = '2007-2016.xlsx'
+filename  = 'Data/2007-2016.xlsx'
 yr = '2015'
 
 #calling the function for testing
