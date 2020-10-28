@@ -60,7 +60,7 @@ From here you only need two things from this extracted folder.
 
 From there, the preliminary files have been set up!
 
-# .PY File Instructions
+# .IPYNB File Instructions
  
 
 ## CleaningData.py:
