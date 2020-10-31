@@ -6,9 +6,7 @@ import math as m
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-
-#creating a list for all the years that will be ran
-Years = ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016']
+import random as ran
 
 #creating a function to calculate the euclidean distance of two given cities
 def euclideanDistance(a,b,G):
@@ -61,40 +59,50 @@ def creating_networks(df):
             combinations.append([i,((len(table)-1)+j+1)-(len(table)-1)])
 
     #setting the colors for the nodes        
-    color_map = ['black'] * len(table)
-    for x in range(len(e_d)):
-        a = combinations[x][0]
-        b = combinations[x][1]
+    #color_map = ['black'] * len(table)
+    n = 1
+    while (nx.number_connected_components(G)!=1):
+        for x in range(len(e_d)):
+            a = combinations[x][0]
+            b = combinations[x][1]
 
-        #checking if the euclidean distance is less than 10
-        if e_d[x] <= 10:
-            G.add_edge(a,b)
-            color_map[a]='yellow'
-            color_map[b]='yellow'
-
-        #checking if the euclidean distance is less than 5
-        if e_d[x] <= 5:
-            color_map[a]='orange'
-            color_map[b]='orange'
-
-        #checking if the euclidean distance is less than 3
-        if e_d[x] <= 3:
-            color_map[a]='red'
-            color_map[b]='red'
-
+            #checking if the euclidean distance is less than 10
+            if e_d[x] <= n:
+                G.add_edge(a,b)
+            
+        n = n + 1
+            
     #splitting the edges into groups so they can be later colored accordingly
-    low_edge_list = []
-    med_edge_list = []
-    high_edge_list = []
-    for x in G.edges:
-        if euclideanDistance(x[0],x[1],G)<=3:
-            high_edge_list.append(x)
-        if 3<euclideanDistance(x[0],x[1],G) and euclideanDistance(x[0],x[1],G)<=5:
-            med_edge_list.append(x)
-        if 5<euclideanDistance(x[0],x[1],G) and euclideanDistance(x[0],x[1],G)<=10:
-            low_edge_list.append(x)
+    #low_edge_list = []
+    #med_edge_list = []
+    #high_edge_list = []
+    #for x in G.edges:
+        #if euclideanDistance(x[0],x[1],G)<=3:
+            #high_edge_list.append(x)
+        #if 3<euclideanDistance(x[0],x[1],G) and euclideanDistance(x[0],x[1],G)<=5:
+            #med_edge_list.append(x)
+        #if 5<euclideanDistance(x[0],x[1],G) and euclideanDistance(x[0],x[1],G)<=10:
+            #low_edge_list.append(x)
 
     #labeling each city 
     labels = {i : cities.iloc[i] for i in range(0, len(cities))}
         
-    return [G,labels,color_map,high_edge_list,med_edge_list,low_edge_list]
+    return [G,labels]
+
+def random(): 
+    r = ran.randint(0,255)
+    g = ran.randint(0,255)
+    b = ran.randint(0,255)
+    rgb = [r,g,b]
+    return rgb
+
+def rgb2hex(r,g,b):
+    return "#{:02x}{:02x}{:02x}".format(r,g,b)
+
+def colors(t):
+    color_mapped = []
+    for x in range(len(t)):
+        color_map = random()
+        color_mapped.append(rgb2hex(color_map[0],color_map[1],color_map[2]))    
+        
+    return color_mapped

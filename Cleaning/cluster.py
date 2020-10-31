@@ -51,7 +51,8 @@ def creating_clusters(filename):
         print()
 
         t = table.dropna()
-        print('The outlier cities for '+ yr +'are: ')
+        print('The outlier cities for '+ yr +' are: ')
+        print()
 
 
         #Printing each outlier one at a time
