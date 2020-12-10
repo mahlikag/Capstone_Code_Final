@@ -9,7 +9,7 @@ library("broom")
 
 #Importing the excel sheets and saving each sheet as a new variable:
 for (i in 1:10) {
-  assign(paste0("my_data",i),read_excel("/Users/mahlikageorge/Capstone_Code/Capstone_Code_Final/Data/2007-2016.xlsx",i))
+  assign(paste0("my_data",i),read_excel("Data/2007-2016.xlsx",i))
 }
 
 #Storing the important values (indivudal clearance rates, populations, and crime rates) as variables. 
