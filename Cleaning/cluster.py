@@ -16,6 +16,7 @@ def creating_clusters(filename):
     Years = ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016']
     x = []
     y = []
+    location = []
     colors = []
 
     #this loop will run and print for each year individually
@@ -63,10 +64,12 @@ def creating_clusters(filename):
         colors.append(model.labels_)
         x.append(data.iloc[:,0])
         y.append(data.iloc[:,5])
+        location.append(t.iloc[:,1] + ", " + t.iloc[:,2])
         print()
         
     values = {}
     values['colors'] = colors
     values['x'] = x
     values['y'] = y
+    values['location'] = location
     return values
