@@ -7,20 +7,34 @@ The following are some instructions on how to best execute the files:
 * data cleaning
 * DBSCAN 
 * NetworkX
+* LatentGrowthCurve
+* Tkinter
 
 # Requirements
 
-You will need Python for these files, I recommend Anaconda but please choose what you're most comfortable with.
+You will need Python for these files, I recommend Anaconda but please choose what you're most comfortable with. You will also need a program to run R code (R or RStudio). 
 
 You will also need to download a couple of files from the internet as well in this repository.
 
 ## Package Requirements 
 Before running the python files, you while need to install the following programs if they are not already installed on your computer:
 
+For Python:
 * Read_excel (by using the command 'pip install xlrd')
 * NetworkX (by using the command 'pip install networkx')
 * Matplotlib (by using the command 'pip install matplotlib')
 * Pandas (by using the command 'pip install pandas')
+* Plotly
+* Sklearn
+* Seaborn
+* Numpy
+* Math
+
+For R:
+* Lavaan
+* Readxl
+* Broom
+
 
 # File Setup
 
@@ -105,6 +119,20 @@ Once you run the DBSCAN file in anaconda, you should see:
 Once you run the Netowrks file in anaconda, you should see:
 
 * a total of 10 graphs, one for each of the 10 years of study of the clusters
+
+## Latent Growth Curve 
+
+**Friendly Reminder:** Before running the R file, make sure you have the '2007-2016.xlsx' file downloaded in the Data folder.
+
+Once you run the LatentGrwothCurve.R file:
+
+* a print out ofthe summary statistics for the LGC model analysis of Aggravated Assault and Robbery. As well as a LGC plot for the two types of crimes. 
+
+## App
+
+Once you run the App file:
+
+* a pop-up app that allows you to navigate through the previously discussed topics.
 
 
 # Tests 
